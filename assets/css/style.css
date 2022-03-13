@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap');
+body{
+    margin: 0;
+    background-color: #FFEDDE;
+    font-family: 'League Spartan', sans-serif;
+}
+h1{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    padding: 2em 15% 2em 15%;
+    background-color: #FFF5EC;
+
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    justify-content: space-between;
+    margin-bottom: 5em;
+}
+nav h1{
+    font-family: 'League Spartan', sans-serif;
+    color: #FE033C;
+    font-size: 4em;
+}
+nav ul li{
+    position: relative;
+    display: inline-block;
+}
+nav ul li .dropdown{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    top: 50px;
+    z-index: 1;
+}
+nav ul li span{
+    font-size: 1.8em;
+    border: 3px solid #FE033C;
+    padding: 0.3em 1.5em;
+    border-radius: 10px;
+    color: #302977;
+}
+nav ul li span:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #FE033C;
+    transition-duration: 0.4s;
+}
+nav ul li:hover .dropdown{
+    display: block !important;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 20px;
+    height: 50vh;
+}
+.grid-container > div {
+    position: relative;
+    width: 100%;
+    background-color: #FE033C;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 30px;
+  }
+  .grid-container .content{ 
+      left: 0;
+      top: 50%;
+  transform: translate(0%,-50%);
+      position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+nav .item1 {
+    grid-column: 1 / 5;
+  grid-row: 1/3;
+  background: url('../img/large\ pizza.JPG') center center;
+  background-size: cover;
+}
+nav .item2, nav .item3{
+    grid-column: 5/7;
+}
+nav .item1 img{
+    object-position: center;
+    object-fit: fill;
+}
+.price{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+}
+.type{
+    color: white;
+}
+/*----------------*/
+main>section{
+    padding: 2em 15% 2em 15%;
+}
+.grid-sec{
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    justify-content: space-between;
+}
+.grid-sec .item{
+    border-radius: 10px;
+    height: 200px;
+    box-shadow: 2px 2px 15px 4px rgba(0,0,0,0.13);
+}
+
+.grid-sec .prod_img{
+    width: 100%;
+    height: 80%;
+}
+.grid-sec .prod_img img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+.grid-sec .prod_desc{
+    height: 10%;
+    background-color: white;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5em;
+    padding: 10px;
+}
+.grid-sec .prod_desc .prod_name{
+    color: #302977;
+    font-weight: 600;
+}
+.grid-sec .prod_desc .prod_price{
+    color: #FE033C;
+}
+.featured_sec{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px 4px rgba(0,0,0,0.13);
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+}
+.featured_sec .prod_desc{
+    position: relative;
+    width: 100%;
+}
+.featured_sec .prod_desc .content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+  transform: translate(0%,-50%);
+}
+.featured_sec .prod_desc h3{
+    font-size: 1.5em;
+    margin: 0;
+}
+.featured_sec .prod_desc p{
+    font-size: 1.5em;
+}
+.featured_sec .prod_desc button{
+    width: 150px;
+    background-color: #FE033C;
+    color: white;
+    font-size:1em;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8em;
+}
+.featured_sec .prod_desc button:hover{
+    background-color: #e90339;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.featured_sec .prod_img{
+    width: 40%;
+    overflow: hidden;
+}
+.featured_sec .prod_img img{
+    width: auto;
+    height: 100%;
+}
+
+.specialities{
+    background-color: #FFF5EC;
+    height: 400px;
+}
+.special_title h2 {
+    position: relative;
+    font-size: 30px;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+.special_title h2:before, h2:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 35%;
+    height: 3px;
+    content: '\a0';
+    background-color: red;
+}
+.special_title h2:before {
+    margin-left: -35%;
+    text-align: right;
+}
+.specialities .grid_special{
+    display: grid;
+    grid-template-columns: 13.5% 13.5% 13.5% 13.5% 13.5% 13.5% 13.5%;
+    grid-gap: 10px;
+}
+.grid_special .item{
+    border-radius: 10px;
+    height: 150px;
+    overflow: hidden;
+}
+.grid_special .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.grid_special .item img:hover{
+    filter: brightness(142%) saturate(77%) contrast(93%) invert(19%);
+-webkit-filter: brightness(142%) saturate(77%) contrast(93%) invert(19%);
+-moz-filter: brightness(142%) saturate(77%) contrast(93%) invert(19%);
+    transition-duration: 0.4s;
+}
+footer div{
+    color: #302977;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+}
+footer{
+    padding: 2em;
+}
