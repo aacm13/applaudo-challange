@@ -15,11 +15,18 @@ nav{
 }
 nav ul{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     list-style: none;
     padding: 0;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 5em;
+}
+@media (min-width: 600px) {
+    nav ul{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 nav h1{
     font-family: 'League Spartan', sans-serif;
@@ -29,6 +36,7 @@ nav h1{
 nav ul li{
     position: relative;
     display: inline-block;
+    margin-bottom: 2em;
 }
 nav ul li .dropdown{
     display: none;
@@ -55,9 +63,19 @@ nav ul li:hover .dropdown{
 }
 .grid-container{
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto;
     gap: 20px;
-    height: 50vh;
+    min-height: 400px;
+}
+@media (min-width: 600px) {
+    .grid-container{
+        grid-template-columns: auto auto auto auto auto ;
+    }
+    nav .item1 {
+        grid-column: 1 / 5 !important;
+        grid-row: 1/3;
+    }
+    
 }
 .grid-container > div {
     position: relative;
@@ -78,14 +96,11 @@ nav ul li:hover .dropdown{
   }
 
 nav .item1 {
-    grid-column: 1 / 5;
-  grid-row: 1/3;
+    grid-column: 1 / 3;
   background: url('../img/large\ pizza.JPG') center center;
   background-size: cover;
 }
-nav .item2, nav .item3{
-    grid-column: 5/7;
-}
+
 nav .item1 img{
     object-position: center;
     object-fit: fill;
@@ -104,9 +119,16 @@ main>section{
 }
 .grid-sec{
     display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    justify-content: space-between;
+    grid-auto-rows: minmax(125px, auto);
+    grid-gap: 10px;
 }
+@media (min-width: 600px) {
+    .grid-sec {  grid-template-columns: repeat(2, 1fr); }
+  }
+@media (min-width: 900px) {
+    .grid-sec { grid-template-columns: repeat(4, 1fr); }
+}
+
 .grid-sec .item{
     border-radius: 10px;
     height: 200px;
@@ -147,9 +169,31 @@ main>section{
     background-color: white;
     border-radius: 10px;
     box-shadow: 2px 2px 15px 4px rgba(0,0,0,0.13);
-    height: 250px;
+    height: fit-content;
+    min-height: 200px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+@media (min-width: 600px) {
+    .featured_sec { flex-direction: row; }
+    .featured_sec .prod_img{
+        width: 40% !important;
+    }
+    .featured_sec .prod_img img{
+        width: 70%;
+    }
+    .featured_sec .prod_desc{
+        position: relative;
+        width: 70%;
+    }
+    .featured_sec .prod_desc .content{
+        position: absolute;
+        top: 50%;
+      transform: translate(0%,-50%);
+    }
+  }
+@media (min-width: 900px) {
+    .featured_sec { flex-direction: row; }
 }
 .featured_sec .prod_desc{
     position: relative;
@@ -158,9 +202,6 @@ main>section{
 .featured_sec .prod_desc .content{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-  transform: translate(0%,-50%);
 }
 .featured_sec .prod_desc h3{
     font-size: 1.5em;
@@ -184,17 +225,19 @@ main>section{
     cursor: pointer;
 }
 .featured_sec .prod_img{
-    width: 40%;
+    width: 100%;
     overflow: hidden;
 }
 .featured_sec .prod_img img{
-    width: auto;
-    height: 100%;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 .specialities{
     background-color: #FFF5EC;
-    height: 400px;
+    height: fit-content;
 }
 .special_title h2 {
     position: relative;
@@ -218,8 +261,17 @@ main>section{
 }
 .specialities .grid_special{
     display: grid;
-    grid-template-columns: 13.5% 13.5% 13.5% 13.5% 13.5% 13.5% 13.5%;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+}
+@media (min-width: 600px) {
+    .specialities .grid_special {  grid-template-columns: repeat(2, 1fr); }
+  }
+@media (min-width: 900px) {
+    .specialities .grid_special { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1200px) {
+    .specialities .grid_special { grid-template-columns: repeat(7, 1fr); }
 }
 .grid_special .item{
     border-radius: 10px;
